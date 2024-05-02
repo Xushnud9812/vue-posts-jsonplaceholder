@@ -12,7 +12,7 @@ const updatePost = async () => {
 }
 
 const closeModal = () => {
-  router.go(-1)
+  router.push({ name: 'home', query: { page: route.query?.page } })
 }
 
 </script>
