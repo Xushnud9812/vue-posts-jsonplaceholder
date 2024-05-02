@@ -5,9 +5,7 @@ import { useRouter, useRoute } from "vue-router";
 export const usePosts = () => {
   const route = useRoute();
   const router = useRouter();
-  const page = ref({
-    page: route.query.page || 1
-  });
+  const page = ref(route.query.page || 1);
   const results = ref({});
   const detail = ref({});
   const comments = ref({});
@@ -18,12 +16,14 @@ export const usePosts = () => {
   const endIndex = ref()
 
   function fetchPosts() {
-    page.value.page = route.query.page || 1
+    page.value = route.query.page || 1
 
-    startIndex.value = (page.value.page - 1) * limit.value;
+    startIndex.value = (page.value - 1) * limit.value;
     endIndex.value = startIndex.value + limit.value;
 
     loading.value = true;
+
+    router.push({ query: { page: page.value } })
 
     return axios
       .get(`/posts`)
