@@ -9,13 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hennge/vue3-pagination": "^1.0.17",
     "axios": "^1.6.8",
     "export-from-json": "^1.7.4",
-    "leaflet": "^1.9.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
-    "vue-yandex-maps": "^1.1.0",
     "vue3-google-map": "^0.20.0"
   },
   "devDependencies": {
